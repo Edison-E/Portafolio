@@ -55,9 +55,7 @@ export default {
 }
 
 .presentacion h1:hover {
-  color: blueviolet;
-  animation-play-state: paused;
-  color: black;
+  color: rgb(223, 213, 213);
   text-shadow: 1px 1px 0px rgb(68, 64, 64), -1px 1px 0px rgb(68, 64, 64),  1px -1px 0px rgb(68, 61, 61), -1px -1px 0px rgb(68, 62, 62);
 }
 

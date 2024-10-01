@@ -1,12 +1,34 @@
 <script>
 export default {
   name: "skill-component",
+  data() {
+    return {
+      listaVisibleFrameworks: false,
+      listaVisibleTecnologias: false,
+    };
+  },
+  methods: {
+    mostrarContenidoFrameworks() {
+      if (this.listaVisibleFrameworks == false) {
+        this.listaVisibleFrameworks = true;
+      } else {
+        this.listaVisibleFrameworks = false;
+      }
+    },
+    mostrarContenidoTecnologias() {
+      if (this.listaVisibleTecnologias == false) {
+        this.listaVisibleTecnologias = true;
+      } else {
+        this.listaVisibleTecnologias = false;
+      }
+    },
+  },
 };
 </script>
 
 <template>
+  <h2 id="tituloSkills">Skills</h2>
   <div class="content-skill">
-    <h2>Skills</h2>
     <div class="contenido">
       <table>
         <caption>
@@ -40,14 +62,37 @@ export default {
       </table>
     </div>
     <br />
+
     <div id="otros_datos">
-      <div id="tecno">
-        <h4>TECNOLOGIAS</h4>
-        <p>XML | XSD | DTD | XSLT | XPATH</p>
+      <div id="tecnologiasFather">
+        <h4 @click="mostrarContenidoTecnologias">TECNOLOGIAS</h4>
+        <ul id="tecnologias">
+          <li>
+            <transition>
+              <ul id="contentTecno" v-show="listaVisibleTecnologias">
+                <li>XML</li>
+                <li>XSD</li>
+                <li>DTD</li>
+                <li>XSLT</li>
+                <li>XPATH</li>
+              </ul>
+            </transition>
+          </li>
+        </ul>
       </div>
-      <div id="frameworks">
-        <h4>FRAMEWORKS</h4>
-        <p>VUE | JQUERY</p>
+
+      <div id="frameworksFather">
+        <h4 @click="mostrarContenidoFrameworks">FRAMEWORKS</h4>
+        <ul id="frameworks">
+          <li>
+            <transition>
+              <ul id="contentFrameworks" v-show="listaVisibleFrameworks">
+                <li>VUE</li>
+                <li>JQUERY</li>
+              </ul>
+            </transition>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -55,10 +100,19 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+#tituloSkills {
+  display: grid;
+  place-items: center;
+}
+.contenido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .contenido-skill {
-  text-align: justify;
   max-width: 800px;
+  font-family: "Inconsolata", monospace;
 }
 
 .contenido-skill h2 {
@@ -70,22 +124,75 @@ export default {
   place-items: center;
 }
 
-.contenido table {
-  margin-top: 20px;
+.contenido table caption{
+  font-weight: bold;
 }
-table {
+
+.contenido table {
+  font-family: "Inconsolata", monospace;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.contenido table :last-child {
+   width: 120px;
+}
+
+#otros_datos {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Inconsolata", monospace;
 }
-table td {
-  background-color: black;
-  color: white;
-  border: 1px solid white;
+
+#tecnologias,
+#frameworks {
+  list-style-type: none;
+}
+
+#tecnologiasFather h4,
+#frameworksFather h4 {
+  margin-bottom: 10px;
+  border: 1px solid black;
   border-radius: 20px;
+  color: white;
+  background-color: black;
+  padding: 10px 10px 10px;
+}
+
+#tecnologiasFather h4:hover,
+#frameworksFather h4:hover {
+  color: black;
+  background-color: rgb(223, 213, 213);
+}
+
+#frameworksFather {
+  margin-left: 50px;
+}
+
+#contentTecno,
+#contentFrameworks {
+  list-style-type: none;
+}
+
+table td {
+  border-bottom: 1px solid rgb(0, 0, 0);
   padding: 10px 10px 10px;
 }
 
 table td:hover {
   color: black;
   background-color: rgb(223, 213, 213);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

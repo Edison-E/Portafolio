@@ -5,8 +5,8 @@
 </script>
 
 <template>
+  <h2 id="tituloCompetencia">Competencias</h2>
   <div class="content-competence">
-    <h2>Competencias</h2>
     <div class="primero">
       <div class="circulo_uno">RESPONSABLE</div>
       <div class="circulo_dos">ORGANIZADO</div>
@@ -19,4 +19,19 @@
   </div>
 </template>
 
-<style></style>
+<style>
+  #tituloCompetencia {
+    display: grid;
+    place-items: center;
+  }
+
+  .content-competence {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-competence .primero {
+    margin-right: 25px;
+  }
+</style>
