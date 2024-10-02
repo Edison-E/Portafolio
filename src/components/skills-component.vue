@@ -64,7 +64,7 @@ export default {
     <br />
 
     <div id="otros_datos">
-      <div id="tecnologiasFather">
+      <div id="category">
         <h4 @click="mostrarContenidoTecnologias">TECNOLOGIAS</h4>
         <ul id="tecnologias">
           <li>
@@ -141,17 +141,17 @@ export default {
 #otros_datos {
   margin-top: 15px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-family: "Inconsolata", monospace;
 }
+
 
 #tecnologias,
 #frameworks {
   list-style-type: none;
 }
 
-#tecnologiasFather h4,
+#category h4,
 #frameworksFather h4 {
   margin-bottom: 10px;
   border: 1px solid black;
@@ -161,10 +161,11 @@ export default {
   padding: 10px 10px 10px;
 }
 
-#tecnologiasFather h4:hover,
+#category h4:hover,
 #frameworksFather h4:hover {
   color: black;
   background-color: rgb(223, 213, 213);
+  cursor: pointer;
 }
 
 #frameworksFather {

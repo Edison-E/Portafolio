@@ -13,12 +13,15 @@ export default {
 
 <template>
   <div class="aboutMe">
+    <h1>Hola</h1>
+    <h2>Mi nombre es Edison Enrique</h2>
+    <h3>Y soy dessarrollador web</h3>
     <p>
       <strong>Hola mi nombre es Edison Enrique</strong>
       Actualmente estoy en mi ultimo año de un grado superior de desarrollo de
       aplicaciones web. Des del primer momento me apasionó la programación y todo lo que
-      tenga que ver con este mundo. Soy un chico muy curioso, me encanta aprender nuevas cosas, y mejorar mis hablidades tecnicas.
-       
+      tenga que ver con este mundo. Soy un chico muy curioso, me encanta aprender nuevas
+      cosas, y mejorar mis hablidades tecnicas.
     </p>
     <p>
       Ha sido un recorrido duro pero me encantaría aprender más y crecer con esto que
