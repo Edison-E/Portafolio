@@ -139,12 +139,16 @@ export default {
 }
 
 #otros_datos {
+  margin-left: 260px;
   margin-top: 15px;
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-evenly;*/
   font-family: "Inconsolata", monospace;
 }
 
+#category, #frameworksFather {
+ margin-right: 10px;
+}
 
 #tecnologias,
 #frameworks {
