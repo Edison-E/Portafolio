@@ -103,6 +103,7 @@ export default {
 #tituloSkills {
   display: grid;
   place-items: center;
+  font-family: "Inconsolata", monospace;
 }
 .contenido {
   display: flex;
@@ -124,7 +125,7 @@ export default {
   place-items: center;
 }
 
-.contenido table caption{
+.contenido table caption {
   font-weight: bold;
 }
 
@@ -135,19 +136,19 @@ export default {
 }
 
 .contenido table :last-child {
-   width: 120px;
+  width: 120px;
 }
 
 #otros_datos {
   margin-left: 260px;
   margin-top: 15px;
   display: flex;
-  /*justify-content: space-evenly;*/
   font-family: "Inconsolata", monospace;
 }
 
-#category, #frameworksFather {
- margin-right: 10px;
+#category,
+#frameworksFather {
+  margin-right: 10px;
 }
 
 #tecnologias,
@@ -159,7 +160,6 @@ export default {
 #frameworksFather h4 {
   margin-bottom: 10px;
   border: 1px solid black;
-  border-radius: 20px;
   color: white;
   background-color: black;
   padding: 10px 10px 10px;
@@ -189,6 +189,7 @@ table td {
 table td:hover {
   color: black;
   background-color: rgb(223, 213, 213);
+  cursor: pointer;
 }
 
 .v-enter-active,

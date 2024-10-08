@@ -1,10 +1,12 @@
 <script>
 import introduction from "./Introduction-component.vue";
+import panelInformativo from "./panelInformativo-component.vue";
 
 export default {
   name: "presentacion-component",
   components: {
     introduction,
+    panelInformativo
   },
   data() {
     return {
@@ -22,6 +24,7 @@ export default {
 </script>
 
 <template>
+  <panelInformativo></panelInformativo>
   <div class="presentacion">
     <img src="../assets/post.png" id="poste" v-show="botonVisible" />
     <h1 @click="mostrarContenido" v-show="botonVisible">COMENZAR</h1>

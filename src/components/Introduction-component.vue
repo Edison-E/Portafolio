@@ -22,11 +22,7 @@ export default {
       Actualmente estoy en mi ultimo año de un grado superior de desarrollo de
       aplicaciones web. Des del primer momento me apasionó la programación y todo lo que
       tenga que ver con este mundo. Soy un chico muy curioso, me encanta aprender nuevas
-      cosas, y mejorar mis hablidades tecnicas.
-    </p>
-    <p>
-      Ha sido un recorrido duro pero me encantaría aprender más y crecer con esto que
-      tanto me apasiona.Estoy abierto a oportunidades laborales donde pueda contribuir,
+      cosas y mejorar mis hablidades tecnicas.  Estoy abierto a oportunidades laborales donde pueda contribuir,
       aprender y crecer.
     </p>
   </div>
