@@ -24,8 +24,9 @@ export default {
 </script>
 
 <template>
-  <panelInformativo></panelInformativo>
-  <div class="presentacion">
+ 
+  <div class="presentacion"> 
+    <panelInformativo></panelInformativo>
     <img src="../assets/post.png" id="poste" v-show="botonVisible" />
     <h1 @click="mostrarContenido" v-show="botonVisible">COMENZAR</h1>
 

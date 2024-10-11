@@ -35,9 +35,9 @@ export default {
           Front-End
         </caption>
         <tr>
-          <td>JavaScript</td>
-          <td>Html</td>
-          <td>Css</td>
+          <td id="cambioBottom">JavaScript</td>
+          <td id="cambioBottom">Html</td>
+          <td id="cambioBottom">Css</td>
         </tr>
       </table>
       <br />
@@ -46,8 +46,8 @@ export default {
           Back-End
         </caption>
         <tr>
-          <td>Java</td>
-          <td>Visual Basic</td>
+          <td id="cambioBottom">Java</td>
+          <td id="cambioBottom">Visual Basic</td>
         </tr>
       </table>
       <br />
@@ -56,8 +56,8 @@ export default {
           Database Language
         </caption>
         <tr>
-          <td>Sql</td>
-          <td>Pl/sql</td>
+          <td id="cambioBottom">Sql</td>
+          <td id="cambioBottom">Pl/sql</td>
         </tr>
       </table>
     </div>
