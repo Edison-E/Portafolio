@@ -36,28 +36,43 @@ export default {
         </caption>
         <tr>
           <td id="cambioBottom">JavaScript</td>
+          <td>100%</td>
+        </tr>
+        <tr>
           <td id="cambioBottom">Html</td>
+          <td>100%</td>
+        </tr>
+        <tr>
           <td id="cambioBottom">Css</td>
+          <td>100%</td>
         </tr>
       </table>
-      <br />
+
       <table>
         <caption>
           Back-End
         </caption>
         <tr>
           <td id="cambioBottom">Java</td>
+          <td>100%</td>
+        </tr>
+        <tr>
           <td id="cambioBottom">Visual Basic</td>
+          <td>50%</td>
         </tr>
       </table>
-      <br />
+
       <table>
         <caption>
           Database Language
         </caption>
         <tr>
           <td id="cambioBottom">Sql</td>
+          <td>100%</td>
+        </tr>
+        <tr>
           <td id="cambioBottom">Pl/sql</td>
+          <td>100%</td>
         </tr>
       </table>
     </div>
@@ -65,7 +80,7 @@ export default {
 
     <div id="otros_datos">
       <div id="category">
-        <h4 @click="mostrarContenidoTecnologias">TECNOLOGIAS</h4>
+        <h4 @click="mostrarContenidoTecnologias" id="TitleCategory">TECNOLOGIAS</h4>
         <ul id="tecnologias">
           <li>
             <transition>
@@ -82,7 +97,7 @@ export default {
       </div>
 
       <div id="frameworksFather">
-        <h4 @click="mostrarContenidoFrameworks">FRAMEWORKS</h4>
+        <h4 @click="mostrarContenidoFrameworks" id="TitleFrameworks">FRAMEWORKS</h4>
         <ul id="frameworks">
           <li>
             <transition>
@@ -101,14 +116,33 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 #tituloSkills {
-  display: grid;
-  place-items: center;
   font-family: "Inconsolata", monospace;
+  border-bottom: 1px solid black;
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
+
+#TitleCategory,
+#TitleFrameworks {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+#TitleCategory:hover,
+#TitleFrameworks:hover {
+  background-color: rgb(151, 147, 147);
+  color: rgb(2, 2, 2);
+}
+
 .contenido {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 
 .contenido-skill {
@@ -126,17 +160,26 @@ export default {
 }
 
 .contenido table caption {
+  background-color: rgb(152, 149, 149);
+  color: rgb(0, 0, 0);
   font-weight: bold;
+  padding: 5px;
 }
 
 .contenido table {
+  width: 150px;
   font-family: "Inconsolata", monospace;
-  margin-top: 20px;
-  margin-left: 25px;
+  margin-left: 5px;
+  border: 1px solid;
 }
 
 .contenido table :last-child {
   width: 120px;
+}
+
+#category,
+#frameworksFather {
+  margin-left: 25px;
 }
 
 #otros_datos {
@@ -146,34 +189,9 @@ export default {
   font-family: "Inconsolata", monospace;
 }
 
-#category,
-#frameworksFather {
-  margin-right: 10px;
-}
-
 #tecnologias,
 #frameworks {
   list-style-type: none;
-}
-
-#category h4,
-#frameworksFather h4 {
-  margin-bottom: 10px;
-  border: 1px solid black;
-  color: white;
-  background-color: black;
-  padding: 10px 10px 10px;
-}
-
-#category h4:hover,
-#frameworksFather h4:hover {
-  color: black;
-  background-color: rgb(223, 213, 213);
-  cursor: pointer;
-}
-
-#frameworksFather {
-  margin-left: 50px;
 }
 
 #contentTecno,
@@ -182,7 +200,7 @@ export default {
 }
 
 table td {
-  border-bottom: 1px solid rgb(0, 0, 0);
+  /* border-bottom: 1px solid rgb(0, 0, 0);*/
   padding: 10px 10px 10px;
 }
 
@@ -200,5 +218,40 @@ table td:hover {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+/* Modo Noche */
+#tituloSkillsNoche {
+  font-family: "Inconsolata", monospace;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#tituloCompetenciaNoche {
+  font-family: "Inconsolata", monospace;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#TitleCategoryNoche,
+#TitleFrameworksNoche {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-family: "Inconsolata", monospace;
+}
+
+#TitleCategoryNoche:hover,
+#TitleFrameworksNoche:hover {
+  background-color: rgb(206, 190, 190);
+  color: black;
 }
 </style>

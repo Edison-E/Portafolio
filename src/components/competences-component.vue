@@ -21,9 +21,13 @@ export default {
 
 <style>
 #tituloCompetencia {
-  display: grid;
-  place-items: center;
   font-family: "Inconsolata", monospace;
+  border-bottom: 1px solid black;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px
 }
 
 .content-competence {

@@ -1,33 +1,35 @@
 <script>
-import cargandoComponenet from "./cargando-componenet.vue";
+import { cambioColor } from "@/utils/metodosAuxiliares";
+import { mostrarComponenteVisible } from "@/utils/metodosAuxiliares";
+
 export default {
   name: "panelInformativo-component",
-  components: cargandoComponenet,
   methods: {
-    cambiarColorFondo() {
-      
+    async cambiarColorFondo() {
       var estilos = window.getComputedStyle(document.body);
+      var mostrarComponenteCargando = window.document.getElementById(
+        "mostrarComponenteCargando"
+      );
+      var estiloComponenteCargando = window.getComputedStyle(
+        document.getElementById("mostrarComponenteCargando")
+      );
       var colorFondoActual = estilos.backgroundColor;
       var colorTextoActual = estilos.color;
+      var esVisible = estiloComponenteCargando.visibility;
 
-      if (
-        colorFondoActual == "rgb(255, 255, 255)" &&
-        colorTextoActual == "rgb(0, 0, 0)"
-      ) {
-        document.body.style.backgroundColor = "Black";
-        document.body.style.color = "white";
-        document.getElementById("modoNocturnoDia").innerText = "☼";
-      } else {
-        document.body.style.backgroundColor = "white";
-        document.body.style.color = "black";
-        document.getElementById("modoNocturnoDia").innerText = "☽";
-      }
+      mostrarComponenteVisible(esVisible, mostrarComponenteCargando);
+      await this.sleep(2000);
+      cambioColor(colorFondoActual, colorTextoActual);
+      mostrarComponenteVisible("visible", mostrarComponenteCargando);
+    },
+    sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
     },
     redirectLinkedin() {
       window.open("https://www.linkedin.com/in/edisonenriquedev", "_blank");
     },
     mostrarManga() {
-      const data = null;
+      const datos = null;
 
       const xhr = new XMLHttpRequest();
       xhr.withCredentials = true;
@@ -48,11 +50,8 @@ export default {
       );
       xhr.setRequestHeader("x-rapidapi-host", "mangaverse-api.p.rapidapi.com");
 
-      xhr.send(data);
+      xhr.send(datos);
     },
-    toggleCargandoComponent() {
-      this.mostrarCargandoComponent = !this.mostrarCargandoComponent;
-    }
   },
 };
 </script>
@@ -64,7 +63,6 @@ export default {
     <button @click="redirectLinkedin">In</button>
     <br /><br />
     <button @click="mostrarManga">M</button>
-    <cargandoComponenet v-if="mostrarCargandoComponent"></cargandoComponenet>
   </div>
 </template>
 
@@ -95,4 +93,5 @@ export default {
   border: 2px solid black;
   color: black;
 }
+
 </style>

@@ -12,47 +12,70 @@ export default {
 </script>
 
 <template>
-  <div class="saludo">
-    <h1>Hola</h1>
-    <h1>Mi nombre es <span>E</span>dison <span>E</span>nrique</h1>
-    <h1>Y soy dessarrollador web</h1>
+  <div id="presentacion">
+    <div class="saludo">
+      <h1>HOLA, ME LLAMO</h1>
+      <h1><span>E</span>DISON <span>E</span>NRIQUE</h1>
+    </div>
+    <div id="aboutMe">
+      <p>
+        ACUTALMENTE ESTOY EN MI ULTIMO AÑO DE UN GRADO SUPERIOR DE
+        <span>DESARROLLO DE APLICACIONES WEB</span>. DES DEL PRIMER MOMENTO ME APASIONÓ LA
+        PROGRAMACION Y TODO LO QUE TENGA QUE VER CON ESTE MUNDO.
+      </p>
+      <p>
+        SOY UN CHICO MUY CURIOSO, ME ENCANTA APRENDER NUEVAS COSAS Y MEJORAR MIS
+        HABILIDADES TECNICAS.
+      </p>
+      <p>
+        ESTOY ABIERTO A OPORTUNIDADES LABORALES DONDE PUEDA CONTRIBUIR, APRENDER Y CRECER.
+      </p>
+    </div>
   </div>
-  <div class="aboutMe">
-    <p>
-      Actualmente estoy en mi ultimo año de un grado superior de desarrollo de
-      aplicaciones web. Des del primer momento me apasionó la programación y todo lo que
-      tenga que ver con este mundo. Soy un chico muy curioso, me encanta aprender nuevas
-      cosas y mejorar mis hablidades tecnicas.  Estoy abierto a oportunidades laborales donde pueda contribuir,
-      aprender y crecer.
-    </p>
-  </div>
+
   <br />
-  <div class="skills">
+  <div id="skills">
     <skill></skill>
   </div>
   <br />
-  <div class="competence">
+  <div id="competence">
     <competence></competence>
   </div>
 </template>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
-.aboutMe {
+
+#skills {
+  border: 1px solid black;
+}
+
+#competence {
+  border: 1px solid black;
+}
+
+#aboutMe {
   font-family: "Inconsolata", monospace;
   text-align: justify;
   max-width: 800px;
 }
 
-.aboutMe {
+#aboutMe {
   display: grid;
   place-items: center;
 }
 
-.aboutMe p {
+#aboutMe p {
   line-height: 1.6;
 }
 
+#aboutMe p:first-child span {
+  color: orange;
+}
+
+#aboutMe p:last-child {
+  font-weight: bold;
+}
 .saludo {
   font-family: "Inconsolata", monospace;
   font-size: 20px;
@@ -66,6 +89,15 @@ export default {
 }
 
 .saludo h1 span {
- text-shadow: 3px 0px 0px orange
+  text-shadow: 3px 0px 0px orange;
+}
+
+/*Modo noche*/
+#nocheSkills {
+  border: 1px solid white;
+}
+
+#nocheCompetence {
+  border: 1px solid white;
 }
 </style>

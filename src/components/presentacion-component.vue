@@ -1,17 +1,19 @@
 <script>
 import introduction from "./Introduction-component.vue";
 import panelInformativo from "./panelInformativo-component.vue";
+import cargandoComponent from "./cargando-component.vue";
 
 export default {
   name: "presentacion-component",
   components: {
     introduction,
-    panelInformativo
+    panelInformativo,
+    cargandoComponent,
   },
   data() {
     return {
       contenidoVisible: false,
-      botonVisible: true,
+      botonVisible: true
     };
   },
   methods: {
@@ -24,8 +26,11 @@ export default {
 </script>
 
 <template>
- 
-  <div class="presentacion"> 
+  <div class="presentacion">
+    <div id="mostrarComponenteCargando">
+      <cargandoComponent></cargandoComponent>
+    </div>
+
     <panelInformativo></panelInformativo>
     <img src="../assets/post.png" id="poste" v-show="botonVisible" />
     <h1 @click="mostrarContenido" v-show="botonVisible">COMENZAR</h1>
@@ -45,7 +50,6 @@ export default {
   place-items: center;
   position: relative;
 }
-
 .presentacion h1 {
   font-family: "Inconsolata", monospace;
   position: absolute;
@@ -54,13 +58,19 @@ export default {
   transform: translate(-50%, -50%);
   z-index: 1;
   animation: cambio-de-color 3s infinite alternate;
-  text-shadow: 1px 1px 0px black, -1px 1px 0px black,  1px -1px 0px black, -1px -1px 0px black;
+  text-shadow: 1px 1px 0px black, -1px 1px 0px black, 1px -1px 0px black,
+    -1px -1px 0px black;
   color: white;
 }
 
 .presentacion h1:hover {
   color: rgb(223, 213, 213);
-  text-shadow: 1px 1px 0px rgb(68, 64, 64), -1px 1px 0px rgb(68, 64, 64),  1px -1px 0px rgb(68, 61, 61), -1px -1px 0px rgb(68, 62, 62);
+  text-shadow: 1px 1px 0px rgb(68, 64, 64), -1px 1px 0px rgb(68, 64, 64),
+    1px -1px 0px rgb(68, 61, 61), -1px -1px 0px rgb(68, 62, 62);
+}
+
+#mostrarComponenteCargando {
+  visibility: hidden
 }
 
 #poste {
